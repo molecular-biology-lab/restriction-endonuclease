@@ -61,13 +61,14 @@ export default class RestrictionEndonuclease extends Transform {
     }
 
     this.buffer += basestring
-    const recognizedIndex = this.buffer.indexOf(this.recognitionSequence)
+    let recognizedIndex = this.buffer.indexOf(this.recognitionSequence)
 
-    while (this.buffer.length > this.recognitionSequence.length && recognizedIndex !== -1) {
+    do {
       const dnaFragment = this.buffer.slice(0, recognizedIndex + this.recognitionSequence.length / 2)
       this.buffer = this.buffer.replace(dnaFragment, '')
+      recognizedIndex = this.buffer.indexOf(this.recognitionSequence)
       this.push(dnaFragment + '\n');
-    }
+    } while((this.buffer.length > this.recognitionSequence.length && recognizedIndex !== -1))
     callback();
   }
 

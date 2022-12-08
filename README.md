@@ -7,7 +7,7 @@ Restriction Endonuclease stream.
 ### CLI demo
 
 ```shell
-$ cat /dev/urandom | base64 | tr -dc 'ATGC' | npx restriction-endonuclease
+$ cat /dev/urandom | base64 | tr -dc 'ATGC' | npx restriction-endonuclease AAGCTT
 ```
 
 ### As a dependency

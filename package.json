@@ -14,5 +14,8 @@
     "build": "tsc && chmod +x ./dist/cli.js"
   },
   "types": "dist/index.d.ts",
-  "author": "kamataryo <kamataryo@users.noreply.github.com>"
+  "author": "kamataryo <kamataryo@users.noreply.github.com>",
+  "dependencies": {
+    "restriction-endonuclease": "^0.0.1"
+  }
 }
